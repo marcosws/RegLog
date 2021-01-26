@@ -20,8 +20,8 @@ public class StatusDao {
 		this.connection = new ConnectionFactory().getConnection();
 		try{
 			PreparedStatement preparedStatement = this.connection.prepareStatement("SELECT * FROM TB_STATUS WHERE ID_STATUS = ?");
-			ResultSet resultSet = preparedStatement.executeQuery();
 			preparedStatement.setInt(1, id);
+			ResultSet resultSet = preparedStatement.executeQuery();
 		    resultSet.next();       
 			Status status = new Status();  
 			status.setIdStatus(resultSet.getInt("ID_STATUS"));

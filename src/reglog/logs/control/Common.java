@@ -23,8 +23,11 @@ public class Common {
         throwable.fillInStackTrace ();
         StackTraceElement[] stackTraceElement = throwable.getStackTrace();
         String className = "";
+        int cont = 0;
 		for(StackTraceElement s: stackTraceElement){
 			className =  s.getFileName();
+			cont++;
+			if(cont == 3) break; // Common.java > Log.java > {classe origem}.java
 		}
 		return className;
 	}

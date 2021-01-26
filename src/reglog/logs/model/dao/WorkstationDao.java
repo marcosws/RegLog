@@ -33,6 +33,7 @@ public class WorkstationDao {
 	
 	public Workstation select(int id) {
 		
+		this.connection = new ConnectionFactory().getConnection();
         try {
         	PreparedStatement preparedStatement = this.connection.prepareStatement("SELECT * FROM TB_WORKSTATION WHERE ID_WORKSTATION = ?");
         	preparedStatement.setInt(1, id);

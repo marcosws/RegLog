@@ -2,10 +2,10 @@ package reglog.logs.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 import reglog.logs.model.connection.ConnectionFactory;
 import reglog.logs.model.entity.Log;
@@ -36,7 +36,7 @@ public class LogDao {
         }
 		
 	}
-	public void delete() { 
+/*	public void delete() { 
 		
 		this.connection = new ConnectionFactory().getConnection();
 		String sql = "TRUNCATE TABLE TB_LOG";
@@ -79,6 +79,6 @@ public class LogDao {
 	        }
 	        return null;
 		
-	}
+	}*/
 
 }
