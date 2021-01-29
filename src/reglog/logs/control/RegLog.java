@@ -19,7 +19,7 @@ import reglog.logs.model.entity.Workstation;
 public class RegLog {
 	
 	public enum EStatus{
-		FAIL, PASS, TITLE, INFO;
+		FAILED, PASSED, TITLE, INFORMATION, COMMENT;
 	}
 	
 	public void logRegister(String strLog, String strWorkstation, String strUser, String strClassName, EStatus enumStatus) {
@@ -63,17 +63,20 @@ public class RegLog {
 		StatusDao statusDao = new StatusDao();
 		List<Status> statusList = new  ArrayList<Status>();
 		statusList = statusDao.select();
-		if(EStatus.FAIL.equals(enumStatus)) {
+		if(EStatus.FAILED.equals(enumStatus)) {
 			strStatus = "FAILED";
 		}
-		else if(EStatus.PASS.equals(enumStatus)) {
+		else if(EStatus.PASSED.equals(enumStatus)) {
 			strStatus = "PASSED";
 		}
 		else if(EStatus.TITLE.equals(enumStatus)) {
 			strStatus = "TITLE";
 		}
-		else if(EStatus.INFO.equals(enumStatus)) {
+		else if(EStatus.INFORMATION.equals(enumStatus)) {
 			strStatus = "INFORMATION";
+		}
+		else if(EStatus.COMMENT.equals(enumStatus)) {
+			strStatus = "COMMENT";
 		}
 		for(Status s: statusList) 
 			if(s.getNameStatus().equals(strStatus)) 

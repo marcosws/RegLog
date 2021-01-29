@@ -33,6 +33,7 @@ public class ConnectionFactory {
            this.executeSQL(SQLTables.SQL_NAME_STATUS_PASSED);
            this.executeSQL(SQLTables.SQL_NAME_STATUS_INFORMATION);
            this.executeSQL(SQLTables.SQL_NAME_STATUS_TITLE);
+           this.executeSQL(SQLTables.SQL_NAME_STATUS_COMMENT);
            
  		}
 	}

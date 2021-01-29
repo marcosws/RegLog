@@ -3,7 +3,7 @@ package reglog.logs.control;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class Common {
+public class Utils {
 	
 	public static String getWorkstationName() {
 		
